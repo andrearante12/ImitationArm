@@ -1,8 +1,21 @@
 # Robotic Arm
+This document presents a personal engineering project involving the design and construction of a six-degree-of-freedom (6-DOF) robotic manipulator developed entirely from scratch. The robotic system is actuated by six MG996R pulse-width modulation (PWM) servomotors, which are driven by a PCA9685 16-channel, 12-bit PWM servo controller interfaced via the I2C protocol. Low-level actuator control and real-time signal generation are handled by an Arduino Nano microcontroller.
+
+High-level system control is implemented on a Raspberry Pi running the Robot Operating System (ROS), which is responsible for computationally intensive tasks such as inverse kinematics, trajectory planning, and command generation. Control commands are transmitted from the Raspberry Pi to the Arduino Nano over a serial communication interface, enabling coordinated motion control across all joints.
+
+## Physical Build
+
+![Demo](docs\videos\physical_build.gif)
+
+
+## CAD Model with Solidworks
+
+![Demo](docs\img\side_profile.png)
+
 
 ## Visualization with rviz2
+![Demo](docs\videos\rviz2_demo.gif)
 
-https://docs.ros.org/en/jazzy/p/rviz2/
 
 ### Steps to run
 
@@ -36,5 +49,4 @@ source install/setup.bash
 4. Run the visualization with
 ```
 ros2 launch robotic_arm robotic_arm.launch.py
-
 ```
