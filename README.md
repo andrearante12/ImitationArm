@@ -5,16 +5,16 @@ High-level system control is implemented on a Raspberry Pi running the Robot Ope
 
 ## Physical Build
 
-![Demo](docs\videos\physical_build.mp4)
+https://github.com/andrearante12/Robotic-Arm/blob/main/docs/videos/physical_build.mp4
 
 
 ## CAD Model with Solidworks
 
 ![Demo](docs\img\side_profile.png)
 
-
 ## Visualization with rviz2
-![Demo](docs\videos\rviz2_demo.mp4)
+https://github.com/andrearante12/Robotic-Arm/blob/main/docs/videos/rviz2_demo.mp4
+
 
 
 ### Steps to run
