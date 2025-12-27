@@ -54,3 +54,9 @@ ros2 launch robotic_arm robotic_arm.launch.py
 ```
 ros2 launch robotic_arm_v3_config demo.launch.py
 ```
+
+5. Run pose printer to view joint angles for each servo in real time
+```
+ros2 run pose_printer pose_printer
+```
+
