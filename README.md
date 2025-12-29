@@ -44,19 +44,26 @@ cd ~/ros2_ws
 colcon build --packages-select robotic_arm
 source install/setup.bash
 ```
+## Run Commands for Simulation Features
 
-3. Run the visualization with servo controls
+1. Run the visualization with servo controls using Joint Planner
 ```
 ros2 launch robotic_arm robotic_arm.launch.py
 ```
 
-4. Run the motion planner with MoveIt and rviz2
+2. Run the motion planner with MoveIt and rviz2
 ```
-ros2 launch robotic_arm_v3_config demo.launch.py
+ros2 launch robotic_arm_v3_config demo_with_controllers.launch.py
 ```
 
-5. Run pose printer to view joint angles for each servo in real time
+Run pose printer to view joint angles for each servo in real time (must run in seperate terminal instance)
 ```
 ros2 run pose_printer pose_printer
 ```
+
+3. Manual spawn robot model into gazebo
+```
+gz service -s /world/empty/create   --reqtype gz.msgs.EntityFactory   --reptype gz.msgs.Boolean   --req "sdf_filename: 'model://robotic_arm_model_v3', name: 'robotic_arm'"
+```
+
 
