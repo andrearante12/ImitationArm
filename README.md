@@ -1,7 +1,9 @@
-# Robotic Arm
+# ImitationArm
+This document presents Imitation Arm, a 6DOF robotic arm that learns skills by watching human demonstrations and mimicing movements. The end goal is to create a generalized system where a human can record a video of them picking up and placing an object and upload that to the arm. The arm will then decode the video and be able to copy the exact motion the human made completely autonomously.
+
 
 ## System Overview
-This document presents a personal engineering project involving the design and construction of a six-degree-of-freedom (6-DOF) robotic arm. The robotic system is controlled by six MG996R pulse-width modulation (PWM) servomotors, which are driven by a PCA9685 16-channel, 12-bit PWM servo controller interfaced via the I2C protocol. Low-level actuator control is handled by an Arduino Nano microcontroller.
+The robotic system is controlled by six MG996R pulse-width modulation (PWM) servomotors, which are driven by a PCA9685 16-channel, 12-bit PWM servo controller interfaced via the I2C protocol. Low-level actuator control is handled by an Arduino Nano microcontroller.
 
 High-level system control is implemented on a Raspberry Pi running the Robot Operating System (ROS), which is responsible for computationally intensive control tasks. The ROS2 workspace can be download here: https://github.com/andrearante12/ros2_ws. A custom inverse kinematic algorithm implemented via gradient descent and used to convert target coordinates (x, y, z) into the corresponding servo angles. MoveIt2 was then used to create a motion plan and verify that the path is valid via trajectory planning and collision detection. Control commands are transmitted from the Raspberry Pi to the Arduino Nano over a serial communication interface.
 
