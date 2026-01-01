@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Robot Arm Control</title>
+</head>
+<body>
+
+<h2>Robotic Arm Control</h2>
+
+Servo Controls:<br><br>
+
+<div>
+  0:
+  <input type="range" class="servo" data-servo="0" min="-60" max="60" value="0">
+  <span>0°</span>
+  <button onclick="send(this)">SEND</button><br>
+</div>
+
+<div>
+  1:
+  <input type="range" class="servo" data-servo="1" min="-180" max="180" value="0">
+  <span>0°</span>
+  <button onclick="send(this)">SEND</button><br>
+</div>
+
+<div>
+  2:
+  <input type="range" class="servo" data-servo="2" min="-75" max="45" value="0">
+  <span>0°</span>
+  <button onclick="send(this)">SEND</button><br>
+</div>
+
+<div>
+  3:
+  <input type="range" class="servo" data-servo="3" min="-60" max="45" value="0">
+  <span>0°</span>
+  <button onclick="send(this)">SEND</button><br>
+</div>
+
+<div>
+  4:
+  <input type="range" class="servo" data-servo="4" min="-45" max="45" value="0">
+  <span>0°</span>
+  <button onclick="send(this)">SEND</button><br>
+</div>
+
+<div>
+  5:
+  <input type="range" class="servo" data-servo="5" min="45" max="90" value="45">
+  <span>45°</span>
+  <button onclick="send(this)">SEND</button><br>
+</div>
+
+<script>
+// Live update value ° display while sliding
+document.querySelectorAll(".servo").forEach(slider => {
+  slider.addEventListener("input", function() {
+    this.nextElementSibling.textContent = this.value + "°";
+  });
+});
+
+// Send only that servo’s value to backend when clicking SEND
+function send(button) {
+  const slider = button.previousElementSibling.previousElementSibling;
+  const servo = slider.dataset.servo;
+  const angle = slider.value;
+
+  fetch('/move', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    body: `servo=${servo}&angle=${angle}`
+  });
+
+  console.log(`Sent → Servo ${servo}: ${angle}°`);
+}
+</script>
+
+</body>
+</html>
+
