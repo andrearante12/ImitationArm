@@ -32,9 +32,10 @@ Rough prototype of wearable controller
 
 https://github.com/user-attachments/assets/a6dace8c-65ac-41af-8a9c-40d3fd4ca57d
 
-![IMG_1939](https://github.com/user-attachments/assets/fcc12da2-aa8b-4a2a-a6ee-2820b6211cab)
-
-![IMG_1940](https://github.com/user-attachments/assets/e8a81c16-5bbc-4d5e-98a2-1cae8d4265bf)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fcc12da2-aa8b-4a2a-a6ee-2820b6211cab" width="300" />
+  <img src="https://github.com/user-attachments/assets/e8a81c16-5bbc-4d5e-98a2-1cae8d4265bf" width="300" />
+</p>
 
 ## Visualization and motion planning with rviz2
 
