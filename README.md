@@ -9,6 +9,12 @@ The robotic system is controlled by six MG996R pulse-width modulation (PWM) serv
 
 High-level system control is implemented on a Raspberry Pi running the Robot Operating System (ROS), which is responsible for computationally intensive control tasks. The ROS2 workspace can be download here: https://github.com/andrearante12/ros2_ws. A custom inverse kinematic algorithm implemented via gradient descent and used to convert target coordinates (x, y, z) into the corresponding servo angles. MoveIt2 was then used to create a motion plan and verify that the path is valid via trajectory planning and collision detection. Control commands are transmitted from the Raspberry Pi to the Arduino Nano over a serial communication interface.
 
+## Future Direction
+
+The following features are in development:
+- Vision assisted callibration for wearable controller using D435 Depth Camera
+- Reinforcement Learning Based (Imitation Learning) algorithm for autonomous task execution
+
 ## System Requirements
 - Developed on Ubuntu 24.04 (required for ROS2 Jazzy)
 - ROS2 - Jazzy 
